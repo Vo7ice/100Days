@@ -37,7 +37,7 @@ class Person(object):
 class Student(Person):
 
     def __init__(self, age, name, grade):
-        super.__init__(age, name)
+        super().__init__(age, name)
         self._grade = grade
 
     @property
@@ -54,7 +54,7 @@ class Student(Person):
 class Teacher(Person):
 
     def __init__(self, age, name, title):
-        super.__init__(age, name)
+        super().__init__(age, name)
         self._title = title
     
     @property
@@ -69,7 +69,10 @@ class Teacher(Person):
         print('%s%s正在讲%s.' % (self._title, self._name, course))
 
 def main():
-    pass
+    stu1 = Student('18', '张三', '高三')
+    stu1.study('数学')
+    tea1 = Teacher('35', '李四', '主任')
+    tea1.teach('物理')
 
 if __name__ == '__main__':
     main()
